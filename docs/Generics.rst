@@ -13,16 +13,18 @@ types, allowing improved code reuse. A typical example of a generic type is a
 linked list of values, which can be used with any type of value. In C++, this
 might be expressed as::
 
-  template<typename T>
-  class List {
-  public:
-    struct Node {
-      T value;
-      Node *next;
-    };
-  
-    Node *first;
+```cpp
+template<typename T>
+class List {
+public:
+  struct Node {
+    T value;
+    Node *next;
   };
+  
+  Node *first;
+};
+```
 
 where List<Int>, List<String>, and List<DataRecord> are all distinct types that
 provide a linked list storing integers, strings, and DataRecords,
